@@ -8,6 +8,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOMOC ON)
 
 add_executable(symedit WIN32
+    icon.rc
     locale.qrc
     main.cpp
     qml.qrc
