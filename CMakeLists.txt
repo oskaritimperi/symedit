@@ -46,16 +46,16 @@ if(SYMEDIT_BUILD_HELP)
     file(GLOB_RECURSE HELP_ENG_FILES LIST_DIRECTORIES FALSE help/eng/*.rst help/eng/*.py help/eng/*.png)
 
     add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/help/eng/html/index.html"
-        COMMAND "${SPHINX_BUILD}" -q -b html "${CMAKE_CURRENT_SOURCE_DIR}/help/eng" "${CMAKE_CURRENT_BINARY_DIR}/help/eng"
-        COMMAND "${CMAKE_COMMAND}" -E touch "${CMAKE_CURRENT_BINARY_DIR}/help/eng/html/index.html"
+        COMMAND "${SPHINX_BUILD}" -q -b html "${CMAKE_CURRENT_SOURCE_DIR}/help/eng" "${CMAKE_CURRENT_BINARY_DIR}/help/eng/html"
+        #COMMAND "${CMAKE_COMMAND}" -E touch "${CMAKE_CURRENT_BINARY_DIR}/help/eng/html/index.html"
         DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/venv/stamp" ${HELP_ENG_FILES}
     )
 
     file(GLOB_RECURSE HELP_FIN_FILES LIST_DIRECTORIES FALSE help/fin/*.rst help/fin/*.py help/fin/*.png)
 
     add_custom_command(OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/help/fin/html/index.html"
-        COMMAND "${SPHINX_BUILD}" -q -b html "${CMAKE_CURRENT_SOURCE_DIR}/help/fin" "${CMAKE_CURRENT_BINARY_DIR}/help/fin"
-        COMMAND "${CMAKE_COMMAND}" -E touch "${CMAKE_CURRENT_BINARY_DIR}/help/fin/html/index.html"
+        COMMAND "${SPHINX_BUILD}" -q -b html "${CMAKE_CURRENT_SOURCE_DIR}/help/fin" "${CMAKE_CURRENT_BINARY_DIR}/help/fin/html"
+        #COMMAND "${CMAKE_COMMAND}" -E touch "${CMAKE_CURRENT_BINARY_DIR}/help/fin/html/index.html"
         DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/venv/stamp" ${HELP_FIN_FILES}
     )
 
